@@ -29,20 +29,16 @@ startButton.addEventListener("click", function () {
   }
   let index = 0;
   let allCards = document.querySelectorAll(".card.hidden");
-  let shuffle = [];
-  while (shuffle.length < nCards * 2) {
-    let randomNumber = Math.floor(Math.random() * (nCards * 2));
-    if (!shuffle.includes(randomNumber)) shuffle.push(randomNumber);
-  }
   for (let i = 0; i < allCards.length; i++) {
-    allCards[shuffle[i]].setAttribute("id", index);
+    allCards[i].setAttribute("id", index);
     allCards[
-      shuffle[i]
+      i
     ].style.background = `url(../assets/imgs/${numbersOfCards[index]}.png) center/cover no-repeat`;
+    allCards[i].style.backgroundPositionY = "center"; // Center vertically
 
     if ((i - 1) % 2 == 0) index++;
-    allCards[shuffle[i]].innerHTML = "";
-    allCards[shuffle[i]].classList.remove("hidden");
+    allCards[i].innerHTML = "";
+    allCards[i].classList.remove("hidden");
     allCards[i].classList.add("shown");
   }
 });
