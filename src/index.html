@@ -26,7 +26,7 @@
     <title>Toy Story Memory Game</title>
   </head>
   <body>
-    <div class="header">
+    <div class="header" onchange="getSelectedOption()">
       <h2>Memory Game</h2>
       <select class="level">
         <option value="0">Select a Level</option>
@@ -34,18 +34,24 @@
         <option value="normal">Normal</option>
         <option value="hard">Hard</option>
       </select>
-      <div class="timer">00:00:00</div>
     </div>
+    <!-- <div class="timer">00:00:00</div> -->
     <div class="container">
-      <div class="card">
-        <img src="../assets/imgs/Aliens.png" />
+      <div class="card hidden">
+        <i class="fa-solid fa-question" style="font-size: 1.5rem"></i>
       </div>
-      <div class="card">
-        <img src="../assets/imgs/Army_Men.png" />
+      <div class="card hidden">
+        <i class="fa-solid fa-question" style="font-size: 1.5rem"></i>
       </div>
-      <div class="card">
-        <img src="../assets/imgs/Bo_Peep.png" />
+      <div class="card hidden">
+        <i class="fa-solid fa-question" style="font-size: 1.5rem"></i>
+      </div>
+      <div class="card hidden">
+        <i class="fa-solid fa-question" style="font-size: 1.5rem"></i>
       </div>
     </div>
+    <button class="start" onclick="startLevel()">Start</button>
+    <!-- SCRIPTS -->
+    <script src="app.js"></script>
   </body>
 </html>

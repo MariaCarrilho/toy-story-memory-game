@@ -1,9 +1,8 @@
 :root {
-  --red: #960001;
-  --yellow: #e2e55f;
-  --green: #96c25f;
-  --blue: #5582c6;
-  --purple: #79519f;
+  --background: #f9dec9;
+  --card-color: #99b2dd;
+  --text-color: #3a405a;
+  --button-color: #e9afa3;
 }
 
 * {
@@ -18,31 +17,82 @@ body {
   color: #fff;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(var(--blue), var(--purple));
+  justify-content: space-between;
+  align-items: center;
+  color: var(--text-color);
+  background: var(--background);
 }
 
 .header {
+  width: 100%;
   display: inline-flex;
-  padding: 15px;
-  justify-content: center;
+  padding: 2rem;
+  /* padding-top: 2rem; */
   align-items: center;
   flex-wrap: wrap;
+  border-bottom: var(--green) solid 2px;
 }
-
-.header h2 {
+.level:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.25);
+}
+.level:hover {
+  border-color: #999;
+}
+.level {
+  text-align: center;
+  appearance: none;
+  padding: 8px 30px 8px 16px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M7 10l5 5 5-5z" fill="currentColor"/></svg>'); /* replace with your custom dropdown arrow icon */
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  cursor: pointer;
+}
+h2 {
   flex: 1;
 }
 
-select,
-.timer {
-  margin-right: 10px;
-}
-
 .container {
-  display: flex;
-  width: 70%;
+  display: grid;
+  padding: 2rem 1rem;
+  flex-wrap: wrap;
+  gap: 2rem;
 }
 
 .card {
-  border-radius: 50%;
+  border-radius: 1.5rem;
+  border: var(--card-color) solid 2px;
+}
+
+.card.shown {
+  padding: 3rem;
+  /* cursor: pointer; */
+}
+
+.card.hidden {
+  padding: 2.5rem;
+  color: var(--red);
+  background-color: var(--card-color);
+  cursor: pointer;
+}
+
+button {
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--button-color);
+  cursor: pointer;
+  margin-bottom: 2rem;
+  border: 1px black solid;
+}
+
+@media only screen and (max-width: 700px) {
+  .container {
+    display: flex;
+    justify-content: center;
+  }
 }
