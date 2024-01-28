@@ -1,6 +1,6 @@
 # Toy Story Memory Game
 
-This memory game is a fun and challenging project developed using HTML, CSS, and JavaScript. The game features captivating images of the Toy Story's movies characters sourced from Wikipedia. Please note that the images used in the game belong to Wikipedia.
+This memory game is a fun and challenging project developed using HTML, CSS, and JavaScript. The game features captivating images of the Toy Story's movies characters sourced from Wikipedia and other sources. Please note that the images used in the game do not belong to me.
 
 ## Features
 - HTML for structure
@@ -16,6 +16,6 @@ This memory game is a fun and challenging project developed using HTML, CSS, and
 Have fun and challenge your memory skills with this exciting memory game!
 
 ## Acknowledgements
-- Images sourced from Wikipedia
+- Images sourced from Wikipedia and other sources
 
 Feel free to customize and enhance the game according to your preferences! If you encounter any issues or have suggestions for improvements, please don't hesitate to let us know. Enjoy playing!
