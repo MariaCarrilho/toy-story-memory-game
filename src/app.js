@@ -16,6 +16,7 @@ const cardContainer = document.querySelector(".container");
 const level = document.querySelector(".level");
 const startButton = document.querySelector(".start");
 let flippedCards = [];
+let resetButton = document.querySelector(".reset");
 
 // Event Listeners
 startButton.addEventListener("click", function () {
@@ -44,8 +45,17 @@ startButton.addEventListener("click", function () {
     allCards[shuffle[i]].addEventListener("click", flipCard);
   }
 
-  startButton.innerText = "Pause";
+  startButton.innerText = "Reset";
   startButton.classList.toggle("start");
+  startButton.classList.add("reset");
+  // pauseButton = document.querySelector(".reset");
+  // pauseButton.addEventListener("click", function () {
+  //   startButton.classList.add("start");
+  //   startButton.classList.toggle("reset");
+  //   startButton.innerText = "Start";
+  //   cleanGame();
+  //   addCards((nCards = 2));
+  // });
 });
 
 // Functions
@@ -87,6 +97,8 @@ function flipCard(event) {
 function endGame() {
   startButton.innerText = "Start";
   startButton.classList.toggle("start");
+  startButton.classList.toggle("reset");
+
   document.querySelectorAll(".card.shown").forEach((card) => {
     hideCard(card);
   });
@@ -120,21 +132,25 @@ function cleanGame() {
 }
 
 function revealCard(card, background) {
-  card.classList.remove("hidden");
   card.classList.add("shown");
-  card.innerHTML = "";
-  card.style.background = background;
-  card.style.backgroundColor = "transparent";
+  setTimeout(function () {
+    card.innerHTML = "";
+    card.style.background = background;
+    card.style.backgroundColor = "transparent";
+  }, 250);
+  card.classList.remove("hidden");
   return card;
 }
 
 function hideCard(card) {
   card.classList.add("hidden");
+  setTimeout(function () {
+    card.style.backgroundImage = "none";
+    card.style.backgroundColor = "#99b2dd";
+    card.innerHTML =
+      '<i class="fa-solid fa-question" style="font-size:1.5rem; transform: scaleX(-1)"></i>';
+  }, 200);
   card.classList.remove("shown");
-  card.style.backgroundImage = "none";
-  card.style.backgroundColor = "#99b2dd";
-  card.innerHTML =
-    '<i class="fa-solid fa-question" style="font-size:1.5rem; transform: scaleX(-1)"></i>';
   return card;
 }
 
